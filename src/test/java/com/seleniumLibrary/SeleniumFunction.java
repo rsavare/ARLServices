@@ -2,14 +2,18 @@ package com.seleniumLibrary;
 
 import java.util.NoSuchElementException;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.runnerClass.ScriptRunner;
 
-import junit.framework.Assert;
 
-public class SeleniumFunction extends ScriptRunner {
+public class SeleniumFunction {
+	
+	public static RemoteWebDriver driver= ScriptRunner.driver;
+	
 	
 	
 	public void naviagtetoURL(String url) {

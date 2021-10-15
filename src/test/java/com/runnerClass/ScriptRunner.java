@@ -26,13 +26,14 @@ import io.cucumber.junit.CucumberOptions;
    
 public class ScriptRunner {
 	
+	public static RemoteWebDriver driver;
 	public static WebDriverWait wait;
 	 public static String browser;
 	 public static String url;
 	 public static String uname;
 	 public static String pwd;
 	
-	public static RemoteWebDriver driver;
+	
 	public static ThreadLocal<RemoteWebDriver> threadDriver = new ThreadLocal<RemoteWebDriver>();
 	
 	@BeforeClass
@@ -49,15 +50,17 @@ public class ScriptRunner {
 		pwd = prop.getProperty("password");
 		
 		threadDriver.set(createWebDriver(browser));
-		
+		//createWebDriver(browser);
 	}
 	
 	
 	
-	public static RemoteWebDriver getWebDriver() {
-		System.out.println("Webdriver: "+threadDriver.get());
-		return threadDriver.get();
-	}
+	
+	  public static RemoteWebDriver getWebDriver() {
+	  System.out.println("Webdriver: "+threadDriver.get()); 
+	  return threadDriver.get(); 
+	  }
+	 
 	
 	public static RemoteWebDriver createWebDriver(String browserType) {
 		System.out.println("The browser used is :"+browserType);
@@ -74,6 +77,7 @@ public class ScriptRunner {
 	public static RemoteWebDriver initChromeDriver() {
 		try {
 			System.out.println("Launching the Browser");
+			
 			System.setProperty("webdriver.chrome.driver", 
 					System.getProperty("D://Automation Frameworks//ARLServices//src//test//resources//Drivers//chromedriver.exe"));
 			driver = new ChromeDriver();
@@ -112,11 +116,13 @@ public class ScriptRunner {
 		}
 	}
 	
-	public static WebDriverWait setWait() {
-		if(wait==null) {
-			wait = new WebDriverWait(driver,60);
-		}
-		return wait;
-	}
+	
+	 public static WebDriverWait setWait() { 
+		 if(wait==null) { 
+			 wait = new WebDriverWait(driver,80); 
+	 } 
+	 return wait; 
+	 }
+	 
 
 }

@@ -8,8 +8,8 @@ public class CucumberHooks extends ScriptRunner {
 	
 	@Before
 	public void initSetup() throws Throwable {
-//		System.out.println("Inside cucumber Hooks Before");
-//		beforeMethod();
+		//System.out.println("Inside cucumber Hooks Before");
+		//beforeMethod();
 	}
 	
 	@After

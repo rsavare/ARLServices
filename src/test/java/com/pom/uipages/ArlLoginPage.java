@@ -1,11 +1,15 @@
 package com.pom.uipages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.seleniumLibrary.SeleniumFunction;
 
 public class ArlLoginPage extends SeleniumFunction {
 	
+	
+
+
 	public By userName = By.xpath("//span[text()='Submit']//preceding::input[2]");
 	public By passWord = By.xpath("//span[text()='Submit']//preceding::input[1]");
 	public By submitBtn = By.xpath("//span[text()='Submit']");

@@ -13,6 +13,9 @@ public class LoginPage extends SeleniumFunction {
 	
 	
 	
+	
+
+
 	String url = ScriptRunner.url;
 	String username = ScriptRunner.uname;
 	String password = ScriptRunner.pwd;
@@ -27,11 +30,16 @@ public class LoginPage extends SeleniumFunction {
 	@Given("^user is logged in with valid Credentials$")
 	public void user_is_logged_in_with_valid_Credentials() {
 		
+		
+		
+		/*
+		 * if(ScriptRunner.wait==null) { ScriptRunner.setWait(); }
+		 */
+		 
+		
 		if(isElementExist(signInBtn)) {
 			
-			if(ScriptRunner.wait==null) {
-				ScriptRunner.setWait();
-			}
+			
 			System.out.println("Entering the URL :"+url);
 			System.out.println("Entering the Username");
 			enter(userName_id, username);
